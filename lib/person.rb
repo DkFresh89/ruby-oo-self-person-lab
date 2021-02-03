@@ -4,23 +4,23 @@ require 'pry'
 class Person
     
     attr_reader :name
-    attr_accessor :balance, :bank_account, :happiness, :hygiene
+    attr_accessor :bank_account, :happiness, :hygiene
     
     def initialize(name_parameter)
         @name = name_parameter
-        @balance = 25
+        @bank_account = 25
         @happiness = 8
         @hygiene = 8
-        #binding.pry 
+        # binding.pry 
         
     end
 
-    def bank_account
-        balance
-    end
+    # def bank_account
+    #     balance
+    # end
 
-    def happiness
-        @happiness.clamp(0, 10)    
+    def happiness=(new_value)   
+       @happiness = new_value.clamp(0, 10)
     end
 
     def hygiene
@@ -36,7 +36,7 @@ class Person
     end 
     
     def get_paid(salary_amount) 
-       self.balance = bank_account + salary_amount
+       self.bank_account += salary_amount
         "all about the benjamins"
     end 
 end
