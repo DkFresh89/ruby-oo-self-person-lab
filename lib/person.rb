@@ -28,15 +28,15 @@ class Person
     end 
 
     def happy?
-        @happiness > 7
-        end 
+        happiness > 7
+    end 
 
     def clean?
-        @hygiene > 7
+        hygiene > 7
     end 
     
     def get_paid(salary_amount) 
-       @balance = self.bank_account + salary_amount
+       self.balance = bank_account + salary_amount
         "all about the benjamins"
     end 
 end
